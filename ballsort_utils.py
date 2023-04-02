@@ -1,11 +1,4 @@
 from random import shuffle
-from ballsort import Puzzle
-
-def random_puzzle(full_tubes, empty_tubes, capacity):
-    '''
-    Generate a random puxxle
-    '''
-    return Puzzle(random_state(full_tubes, empty_tubes, capacity), capacity)
 
 def random_state(full_tubes, empty_tubes, capacity):
     '''
