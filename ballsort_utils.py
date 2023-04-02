@@ -49,6 +49,10 @@ def move(state, i, j):
                 else state[k]\
                 for k in range(len(state)))
 
+def print_solution(sol):
+    for i, j in sol:
+        print(f'Move ball from tube {i} to tube {j}')
+
 # HEURISTICS
 
 def mono_color(state):
