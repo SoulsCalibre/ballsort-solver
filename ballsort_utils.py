@@ -15,14 +15,12 @@ def tuple_form(state) -> tuple:
     return tuple(map(tuple, state))
 
 def solved(state) -> bool:
-    """
-    Checks if the puzzle is solved. A puzzle is considered solved if each tube
-    has one or less colors. Note that this means that 4 tubes with one blue ball each
-    is just as solved as 1 tube with 4 blue balls and 3 empty tubes.
-    """
-    for tube in state:
-        if len(set(tube)) > 1:
-            return False
+    unique_numbers = set()
+    for inner_list in state:
+        if len(inner_list):
+            if inner_list[0] in unique_numbers or len(set(inner_list)) != 1:
+                return False
+            unique_numbers.add(inner_list[0])
     return True
 
 def min_solution(state):
